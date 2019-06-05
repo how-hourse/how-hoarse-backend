@@ -13,6 +13,10 @@ describe('auth route tests', () => {
   beforeEach(() => {
     return mongoose.connection.dropDatabase();
   });
+
+  afterAll(() => {
+    return mongoose.connection.close();
+  });
   
   const userAgent = request.agent(app);
   beforeEach(() => {
