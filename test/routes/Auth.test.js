@@ -10,7 +10,7 @@ describe('auth route tests', () => {
     return connect();
   });
   
-  beforeEach(() => {
+  afterEach(() => {
     return mongoose.connection.dropDatabase();
   });
 
