@@ -46,6 +46,7 @@ describe('score routes', () => {
     return agent
       .get('/api/v1/score/topscores')
       .then(res => {
+        console.log(res.body);
         expect(res.body).toEqual([
           expect.any(Object),
           expect.any(Object),
