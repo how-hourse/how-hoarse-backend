@@ -17,11 +17,6 @@ describe('score routes', () => {
   });
 
   const agent = request.agent(app);
-  beforeEach(() => {
-    return agent
-      .post('/api/v1/auth/signup')
-      .send({ name: 'Anna', email: 'personpersonanna@email.com', password: 'password' });
-  });
 
   beforeEach(() => {
     return seedData();
@@ -34,12 +29,12 @@ describe('score routes', () => {
   it('posts a new score', () =>{
     return agent
       .post('/api/v1/score/newscore')
-      .send({ user: new mongoose.Types.ObjectId(), score: 18 })
+      .send({ user: 'sally', score: 18 })
       .then(res => {
         expect(res.body).toEqual({
           newscore: {
             _id: expect.any(String),
-            user: expect.any(String),
+            user: 'sally',
             score: 18
           },
           overallPlace: expect.any(Number)
