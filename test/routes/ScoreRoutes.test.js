@@ -20,7 +20,7 @@ describe('score routes', () => {
   beforeEach(() => {
     return agent
       .post('/api/v1/auth/signup')
-      .send({ name: 'Anna', email: 'person@email.com', password: 'password' });
+      .send({ name: 'Anna', email: 'personpersonanna@email.com', password: 'password' });
   });
 
   beforeEach(() => {

@@ -22,7 +22,7 @@ describe('auth route tests', () => {
   beforeEach(() => {
     return userAgent
       .post('/api/v1/auth/signup')
-      .send({ name: 'Anna', email: 'person@gmail.com', password: 'password' });
+      .send({ name: 'Anna', email: 'personplace@gmail.com', password: 'password' });
   });
 
   it('signs up an user', () => {
@@ -41,12 +41,12 @@ describe('auth route tests', () => {
   it('signs in a user', () => {
     return request(app)
       .post('/api/v1/auth/signin')
-      .send({ email: 'person@gmail.com', password: 'password' })
+      .send({ email: 'personplace@gmail.com', password: 'password' })
       .then(res => {
         expect(res.body).toEqual({
           _id: expect.any(String),
           name: expect.any(String),
-          email: 'person@gmail.com'
+          email: 'personplace@gmail.com'
         });
       });
   });
