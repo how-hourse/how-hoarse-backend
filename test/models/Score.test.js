@@ -16,14 +16,14 @@ describe('Score', () => {
 
   it('creates score', () => {
     return Score.create({
-      score: 200,
+      score: 42,
       user: new mongoose.Types.ObjectId() 
     })
       .then(score => {
         expect(score.toJSON()).toEqual({
           _id: expect.any(mongoose.Types.ObjectId),
           user: expect.any(mongoose.Types.ObjectId),
-          score: 200
+          score: 42
         });
       });
   });

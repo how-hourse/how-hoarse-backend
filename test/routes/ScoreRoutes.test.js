@@ -34,12 +34,15 @@ describe('score routes', () => {
   it('posts a new score', () =>{
     return agent
       .post('/api/v1/score/newscore')
-      .send({ user: new mongoose.Types.ObjectId(), score: 200 })
+      .send({ user: new mongoose.Types.ObjectId(), score: 18 })
       .then(res => {
         expect(res.body).toEqual({
-          _id: expect.any(String),
-          user: expect.any(String),
-          score: 200
+          newscore: {
+            _id: expect.any(String),
+            user: expect.any(String),
+            score: 18
+          },
+          overallPlace: expect.any(Number)
         });
       });
   });
